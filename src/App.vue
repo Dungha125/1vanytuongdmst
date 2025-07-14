@@ -81,10 +81,11 @@
 </template>
 
 <script setup>
-
-import Main from './components/Main.vue';
+import { defineAsyncComponent } from 'vue';
 import { DotLottieVue } from '@lottiefiles/dotlottie-vue'
-
+const Main = defineAsyncComponent(() => 
+  import('./components/Main.vue')
+);
 </script>
 
 <style>
