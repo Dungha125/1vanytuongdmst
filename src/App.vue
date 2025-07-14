@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="background-animations">
-      <div class="background-icon left-icon" ref="innovationIcon1"></div>
-      <div class="background-icon right-icon" ref="innovationIcon2"></div>
+      <DotLottieVue class="background-icon left-icon"  autoplay loop src="https://lottie.host/20c0102b-8212-4fe6-ba7e-0a3b73d610c6/ot6Hp0yDKX.lottie" />
+      <DotLottieVue class="background-icon right-icon"  autoplay loop src="https://lottie.host/a314de6a-c643-4187-b5ab-42bc81f4107a/snKcFf1Q6Q.lottie" />
     </div>
     <main class="main-vertical">
       <div class="tieungu">
@@ -81,34 +81,10 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue';
-import lottie from 'lottie-web';
+
 import Main from './components/Main.vue';
+import { DotLottieVue } from '@lottiefiles/dotlottie-vue'
 
-import animationData1 from '@/assets/lottie/icon1.json';
-import animationData2 from '@/assets/lottie/icon2.json';
-
-const innovationIcon1 = ref(null);
-const innovationIcon2 = ref(null);
-onMounted(() => {
-  const loadLottieAnimation = (container, animData) => {
-    if (container) {
-      lottie.loadAnimation({
-        container: container,
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        animationData: animData 
-      });
-    }
-  };
-  loadLottieAnimation(innovationIcon1.value, animationData1);
-  loadLottieAnimation(innovationIcon2.value, animationData2);
-  window.addEventListener('scroll', handleScroll);
-});
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
-});
 </script>
 
 <style>
@@ -176,8 +152,8 @@ body {
 .left-icon {
   top: 5vh;
   left: 2vw;
-  width: 110px; 
-  height: 110px;
+  width: 180px; 
+  height: 180px;
 }
 .right-icon {
   bottom: 7vh;

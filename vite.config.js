@@ -15,4 +15,12 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  assetsInclude: ['**/*.json'],
+  build: {
+    rollupOptions: {
+      treeshake: {
+        tryCatchDeoptimization: false
+      }
+    }
+  }
 })
